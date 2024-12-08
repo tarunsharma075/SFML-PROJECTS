@@ -7,23 +7,20 @@ using namespace sf;
 
 int main()
 {
-    RenderWindow window(sf::VideoMode(1920, 1080),"First Game Screen");
+    RenderWindow window(VideoMode(1920, 1080), "First Game Screen");
     Event gameEvent;
-    
+
     while (window.isOpen()) {
-      
-        if (window.pollEvent(gameEvent)) {
-            gameEvent.type = Event::Closed;
-            window.close();
+        // Poll and handle events
+        while (window.pollEvent(gameEvent)) {
+            if (gameEvent.type == Event::Closed) { // Check if the event is "Closed"
+                window.close(); // Close the window
+            }
         }
-        
 
-        window.clear();
-        window.display();
-        
-
+        window.clear(); // Clear the screen (default color is black)
+        window.display(); // Display the updated frame
     }
-
 
     return 0;
 }
