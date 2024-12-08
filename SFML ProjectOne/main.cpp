@@ -11,15 +11,15 @@ int main()
     Event gameEvent;
 
     while (window.isOpen()) {
-        // Poll and handle events
+      
         while (window.pollEvent(gameEvent)) {
-            if (gameEvent.type == Event::Closed) { // Check if the event is "Closed"
-                window.close(); // Close the window
+            if (gameEvent.type == Event::Closed) { 
+                window.close(); 
             }
         }
 
-        window.clear(); // Clear the screen (default color is black)
-        window.display(); // Display the updated frame
+        window.clear(Color::Green); 
+        window.display(); 
     }
 
     return 0;
